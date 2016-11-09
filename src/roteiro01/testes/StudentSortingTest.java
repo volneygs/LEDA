@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import roteiro01.r01.AbstractSorting;
-import roteiro01.r01.BubbleSort;
+import roteiro01.r01.InsertionSort;
 
 public class StudentSortingTest {
 
@@ -35,7 +35,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 		//TODO O aluno deve instanciar sua implementação abaixo ao invés de null 
-		this.implementation = new BubbleSort();
+		this.implementation = new InsertionSort();
 
 	}
 
@@ -89,6 +89,15 @@ public class StudentSortingTest {
 	@Test
 	public void testSort05() {
 		genericTest(vetorValoresRepetidos);
+	}
+	
+	@Test
+	public void testaSort06(){
+		Integer[] copy1 = Arrays.copyOf(vetorTamPar, vetorTamPar.length);
+		implementation.sort(vetorTamPar, 5, 9);
+		Arrays.sort(copy1, 5, 9);
+		Assert.assertArrayEquals(copy1, vetorTamPar);
+		
 	}
 	
 	//MÉTODOS QUE OS ALUNOS PODEM CRIAR 
