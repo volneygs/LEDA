@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import roteiro01.r01.AbstractSorting;
-import roteiro01.r01.InsertionSort;
+import roteiro01.r01.BidirectionalBubbleSort;
 
 public class StudentSortingTest {
 
@@ -35,7 +35,7 @@ public class StudentSortingTest {
 	 */
 	private void getImplementation() {
 		//TODO O aluno deve instanciar sua implementação abaixo ao invés de null 
-		this.implementation = new InsertionSort();
+		this.implementation = new BidirectionalBubbleSort();
 
 	}
 

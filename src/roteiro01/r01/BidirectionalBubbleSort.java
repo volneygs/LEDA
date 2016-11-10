@@ -13,6 +13,15 @@ public class BidirectionalBubbleSort<T extends Comparable<T>> extends AbstractSo
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 		
-		
+		for(int i = leftIndex; i < rightIndex - 1; i++){
+			
+			for(int j = leftIndex; j < rightIndex - i; j++){
+				
+				if(array[j].compareTo(array[j+1]) > 0){
+					
+					Util.swap(array, j, j+1);
+				}
+			}
+		}
 	}
 }
