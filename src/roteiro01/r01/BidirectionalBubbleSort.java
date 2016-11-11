@@ -15,11 +15,24 @@ public class BidirectionalBubbleSort<T extends Comparable<T>> extends AbstractSo
 		
 		for(int i = leftIndex; i < rightIndex - 1; i++){
 			
-			for(int j = leftIndex; j < rightIndex - i; j++){
+			if(i%2 == 0){
 				
-				if(array[j].compareTo(array[j+1]) > 0){
+				for(int j = leftIndex; j < rightIndex; j++){
+			
+					if(array[j].compareTo(array[j+1]) > 0){
 					
-					Util.swap(array, j, j+1);
+						Util.swap(array, j, j+1);
+					}
+				}
+				
+			}else{
+				
+				for(int h = rightIndex; h > leftIndex; h--){
+					
+					if(array[h].compareTo(array[h-1]) < 0){
+						
+						Util.swap(array, h, h-1);
+					}
 				}
 			}
 		}

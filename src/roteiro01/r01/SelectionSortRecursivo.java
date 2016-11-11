@@ -13,7 +13,22 @@ public class SelectionSortRecursivo<T extends Comparable<T>> extends AbstractSor
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 	
 		
+		int menor;
 		
+		for(int i = leftIndex; i < rightIndex; i++){
+			
+			menor = i;
+			
+			for(int j = i; j < rightIndex; j++){
+				
+				if(array[j].compareTo(array[menor]) < 0){
+					
+					menor = j;
+				}							
+			}
+			
+			Util.swap(array, i, menor);
+		}
 	}
 	
 }
